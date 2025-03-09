@@ -1,0 +1,40 @@
+
+.item{
+    display:flex;
+    height: 250px;
+        width: 70%;
+    background-color: #8fa6c7;
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    padding-left: 1%;
+    padding-top: 1%;
+    padding-bottom: 12px;
+    margin-top: 15px;
+margin-left: auto;
+margin-right: auto;
+    box-shadow: 0 2px 4px #00000033;
+
+    
+
+    }
+    .item h2{
+        font-size: 24px;
+        margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 2px;
+    }
+    .item p{
+        font-size: 16px;
+        margin-left: 10px;
+    }
+    .item button{
+        background-color: #282c34;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        font-size: 16px;
+        margin-left: 13px;
+        cursor: pointer;
+        border: 1px ;
+        border-radius: 10px;
+    }

@@ -1,0 +1,20 @@
+.Welcome-card{
+    background-color: #343f94;;
+    color: #fffefe;
+    padding: 10px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin: auto;
+    margin-bottom: 20px;
+    height: 100%;
+    font-display: bold;
+    text-align: center;
+}
+.Welcome-card h1{
+    font-size: 50px;
+    font-weight: bolder;
+   
+}
+.Welcome-card h3{
+    font-size: 20px;
+    font-weight: bold;}

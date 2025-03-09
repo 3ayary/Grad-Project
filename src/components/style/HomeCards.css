@@ -1,0 +1,39 @@
+
+.home{
+    width: 30%;
+    height: 100%;
+    background-color: #6389bd;
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    padding-left: 1%;
+    padding-top: 1px;
+    padding-bottom: 12px;
+    margin-top: 15px;
+
+    
+    box-shadow: 0 2px 4px #00000033;
+ 
+    
+
+    }
+    .home h2{
+        font-size: 24px;
+        margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 2px;
+    }
+    .home p{
+        font-size: 16px;
+        margin-left: 10px;
+    }
+    .home button{
+        background-color: #282c34;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        font-size: 16px;
+        margin-left: 13px;
+        cursor: pointer;
+        border: 1px ;
+        border-radius: 10px;
+    }

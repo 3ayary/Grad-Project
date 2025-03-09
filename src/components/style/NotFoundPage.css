@@ -1,0 +1,23 @@
+.NotFound{
+    display: grid;
+    place-items: center;
+margin-top: 10%;
+
+}
+
+
+.NotFound button{
+    background-color: #343f94;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+
+}
+.NotFound button:hover{
+
+    background-color: #282c34;
+    color: white;
+
+}
