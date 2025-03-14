@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import"../components/style/LoginPage.css"
 import { useNavigate } from 'react-router-dom';
-import { useSelector,useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { login } from '../features/UserSlice';
 
 

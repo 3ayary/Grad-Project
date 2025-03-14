@@ -2,15 +2,16 @@ import React, { useState, useEffect } from "react";
 import Spinner from "../components/Spinner.jsx";
 import PopUp from "./popUp.jsx";
 import "./style/item.css";
-
+import itemsapi from "../data/ItemsData.json"
 const Items = ({ isHome = false }) => {
 
 
-  const api = isHome ? "http://localhost:9000/items?_limit=2": "http://localhost:9000/items";
+const api = isHome ? itemsapi.items.slice(0,3): itemsapi.items; 
 
 
 
 
+console.log(api)
   const [Items, setItems] = useState([]);
 
   const [loading, setLoading] = useState(true);
@@ -24,9 +25,7 @@ const Items = ({ isHome = false }) => {
       
       try {
 
-        const res = await fetch(api);
-        const data = await res.json();
-        setItems(data);
+        setItems(api);
 
       } catch (error) {
         console.log("error fetching data", error);

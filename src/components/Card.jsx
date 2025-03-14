@@ -2,20 +2,19 @@ import React from 'react'
 import { useEffect,useState } from 'react';
 import Spinner from './Spinner.jsx';
 import "./style/Card.css"
+import aboutUs_data from "../data/OurData.json"
+
 const Card = () => {
 
 
 const [Person,setPerson] = useState([])
-const aboutUs_api = "http://localhost:9001/Us"
+const aboutUs_api = aboutUs_data.Us
  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchPerson = async () => {
       
       try {
-
-        const res = await fetch(aboutUs_api);
-        const data = await res.json();
-        setPerson(data);
+        setPerson(aboutUs_api);
 
       } catch (error) {
         console.log("error fetching data", error);
