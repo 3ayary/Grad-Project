@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState ={
-    thestate : true
+    thestate: false
 }
 
 
@@ -9,7 +9,7 @@ export const userSlice = createSlice({
 name :'user',
 initialState,
 reducers:{
-login :(state)=>{
+login : (state) => {
    state.thestate = true;
 }
 }

@@ -5,10 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector,useDispatch } from 'react-redux';
 import { login } from '../features/UserSlice';
 
- export let userState
 
 const LoginPage = () => {
-   userState = useSelector((state)=>state.user.thestate) 
   const dispatch = useDispatch()
 
   const [email, setEmail] = useState('');
@@ -22,24 +20,20 @@ const LoginPage = () => {
 const navigate = useNavigate();
 
 function handleLogin (){
-  dispatch(login())
+  
   navigate("/")
-  console.log(userState)
 }
 
 
 
 
 
-const logedin = email != '' ? true: false
+const logedin = email != '' 
     const handleSubmit = (e) => {
       e.preventDefault();
       console.log('Email:', email);
-      console.log('Password:', password);
-    
-      
-
       logedin ?  handleLogin() : alert('access denied!')
+      dispatch(login())
     };
   
     return (<div className='login-container-page'>
