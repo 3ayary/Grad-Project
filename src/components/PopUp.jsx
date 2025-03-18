@@ -3,8 +3,8 @@ import React from 'react'
 const PopUp = () => {
   return (
     <div>
-      <form className='login-card'>
-        <h2>Login</h2>      
+      <form className='pop-card'>
+          
         
         <div>
 
@@ -12,20 +12,19 @@ const PopUp = () => {
             type="email"
             placeholder="Email"
             // value=
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => (e.target.value)}
           />
         </div>
   
         <div>
           <input
-            type="password"
-            placeholder="Password"
-          
-            onChange={(e) => setPassword(e.target.value)}
+            type="text"
+          placeholder= "Phone Number"
+            onChange={(e) => (e.target.value)}
           />
         </div>
   
-        <button type="submit" >Login</button>
+        <button type="submit" >Send</button>
       </form>
     </div>
   )
