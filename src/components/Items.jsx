@@ -1,6 +1,6 @@
 import  { useState, useEffect } from "react";
 import Spinner from "../components/Spinner.jsx";
-import "../components/style/Items.css";
+import "./style/item.css";
 import itemsapi from "../data/ItemsData.json"
 import {Link} from 'react-router-dom'
 
