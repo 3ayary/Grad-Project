@@ -7,6 +7,8 @@ import NotFoundPage from "./pages/NotFoundPage.jsx";
 import ItemsPage from "./pages/ItemsPage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import AboutUsPage from "./pages/AboutUsPage.jsx";
+import ItemDetails from "./pages/itemDetails.jsx";
+
 
 export default function App() {
 
@@ -17,7 +19,8 @@ const router = createBrowserRouter(
 <Route path="*" element={<NotFoundPage/>}/>
 <Route path="items" element={<ItemsPage/>}/>
 <Route path="login" element={<LoginPage/>}/>
-<Route path="aboutUs" element={<AboutUsPage/>}/>
+<Route path="aboutUs" element={<AboutUsPage />}/>
+<Route path="item-details/:id" element={<ItemDetails/>}/>
 </Route>
   )
 );

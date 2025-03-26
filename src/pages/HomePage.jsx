@@ -1,4 +1,3 @@
-import React from 'react'
 import Items from '../components/Items'
 import Welcome from '../components/Welcome'
 import HomeCards from '../components/HomeCards'

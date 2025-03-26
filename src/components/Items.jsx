@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import Spinner from "../components/Spinner.jsx";
-import PopUp from "./popUp.jsx";
 import "./style/item.css";
 import itemsapi from "../data/ItemsData.json"
+import {Link} from 'react-router-dom'
+
 const Items = ({ isHome = false }) => {
 
 
@@ -16,7 +17,6 @@ console.log(api)
 
   const [loading, setLoading] = useState(true);
 
-  const [showMore, setShowMore] = useState({});
 
 
 
@@ -55,24 +55,13 @@ console.log(api)
                     <p>Location: {item.adress}</p>
                     <p>{item.description}</p>
                   </div>
-
-                  <button
-                    id={`button${item.id}`}
-                    onClick={() => {
-                      setShowMore((prev) => ({
-                        ...prev,
-                        [item.id]: !prev[item.id],
-                      }));
-                    }}
-                  >
-                    Contact Us
+                  <Link to={"/item-details/"+item.id}>  
+                  <button>
+                    More Details
                   </button>
+                  </Link>
                 </div>
-                {showMore[item.id] && (
-                  <div>
-                   <PopUp/>
-                  </div>
-                )}
+                
               </>
             );
           })}

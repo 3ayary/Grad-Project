@@ -12,6 +12,11 @@ const AboutUsPage = () => {
 
   <Card/>
   
+
+
+
+
+
   </>
   )
 }
