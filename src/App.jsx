@@ -31,11 +31,12 @@ const router = createBrowserRouter(
   createRoutesFromElements(
 <Route path="/" element={<MainLayout/>}>
 <Route index element={<HomePage/>}/>
-<Route path="*" element={<NotFoundPage/>}/>
+
 <Route path="items" element={<ItemsPage/>}/>
 <Route path="login" element={<LoginPage/>}/>
 <Route path="aboutUs" element={<AboutUsPage />}/>
 <Route path="item-details/:id" element={<ItemDetails/>}/>
+<Route path="*" element={<NotFoundPage/>}/>
 </Route>
   )
 );
