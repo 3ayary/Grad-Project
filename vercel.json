@@ -1,10 +1,26 @@
 {
     "routes": [
-      {
-        "handle": "error",
-        "src": "/.*",
-        "status": 404,
-        "dest": "/index.html"
-      }
+    {
+ "src":"/",
+ "dest":"/" 
+},
+{
+    "src":"/items",
+    "dest":"/"
+},    {
+    "src":"/login",
+    "dest":"/" 
+   },    {
+    "src":"/aboutUs",
+    "dest":"/" 
+   },    {
+    "src":"/item-details/:id",
+    "dest":"/" 
+   },
+   {
+    "src":"*",
+    "dest":"/" 
+   }
+
     ]
   }
