@@ -16,10 +16,6 @@
    },    {
     "src":"/item-details/:id",
     "dest":"/" 
-   },
-   {
-    "src":"*",
-    "dest":"/" 
    }
 
     ]
