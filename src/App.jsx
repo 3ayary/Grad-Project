@@ -1,5 +1,6 @@
 
 import "./App.css";
+import "./components/style/Item.css"
 import { Route,RouterProvider, createBrowserRouter,createRoutesFromElements } from "react-router-dom";
 import MainLayout from "../src/layouts/MainLayout.jsx"
 import HomePage from "./pages/HomePage";
