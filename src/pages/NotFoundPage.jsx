@@ -1,5 +1,5 @@
 import React from 'react'
-import warning from'../assets/warning.png'
+import warning from'../../public/assets/warning.png'
 import {Link} from 'react-router-dom'
 import"../components/style/NotFoundPage.css"
 const NotFoundPage = () => {

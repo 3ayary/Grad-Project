@@ -5,7 +5,7 @@
       "name": "luxury House",
       "adress": "tanta",
       "price": "30K$",
-      "img": "/src/assets/property1.jpg",
+      "img": "../../public/assets/property1.jpg",
       "description":" This beautiful family home features 4 bedrooms, 3 baths, and a spacious backyard."
     },
     {
@@ -21,7 +21,7 @@
       "name": "Modern Villa",
       "adress": "New Cairo",
       "price": "150K$",
-      "img": "https://images.unsplash.com/photo-1599423300746-b62533397364",
+      "img": "../../public/assets/property2.jpg",
       "description": "A stylish modern villa with 5 bedrooms, 4 bathrooms, a pool, and a private garage."
     },
 
