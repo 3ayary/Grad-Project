@@ -4,33 +4,33 @@
     "id":"1",
     "name" : "muhanad",
     "email" :"3ayary@gmail.com",
-    "img" :"../../public/assets/us/3ayary.jpg"
+    "img" :"/assets/us/3ayary.jpg"
 },
 {
     "id":"2",
     "name" : "bahnasi",
     "email" :"bahnasi@gmail.com",
-    "img" :"../../public/assets/us/bhnasi.jpg"
+    "img" :"/assets/us/bhnasi.jpg"
 },{
     "id":"3",
     "name" : "elneny",
     "email" :"elneny@gmail.com",
-    "img" :"../../public/assets/us/elneny.jpg"
+    "img" :"/assets/us/elneny.jpg"
 },{
     "id":"4",
     "name" : "3amer",
     "email" :"3amer@gmail.com",
-    "img" :"../../public/assets/us/3amer.jpg"
+    "img" :"/assets/us/3amer.jpg"
 },{
     "id":"5",
     "name" : "mostafa",
     "email" :"mostafa@gmail.com",
-    "img" :"../../public/assets/us/mostafa.jpg"
+    "img" :"/assets/us/mostafa.jpg"
 },{
     "id":"6",
     "name" : "karim",
     "email" :"karim@gmail.com",
-    "img" :"../../public/assets/us/karim.jpg"
+    "img" :"/assets/us/karim.jpg"
 }
 ]
 }
