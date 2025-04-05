@@ -1,6 +1,20 @@
 
 import "./App.css";
 import "./components/style/Item.css"
+import "./components/style/Card.css"
+import "./components/style/Footer.css"
+import "./components/style/HomeCards.css"
+import "./components/style/HomeCardsContainer.css"
+import "./components/style/Item.css"
+import "./components/style/itemDetails.css"
+import "./components/style/JobContainer.css"
+import "./components/style/LoginPage.css"
+import "./components/style/NotFoundPage.css"
+import "./components/style/spinner.css"
+import "./components/style/Welcome.css"
+
+
+
 import { Route,RouterProvider, createBrowserRouter,createRoutesFromElements } from "react-router-dom";
 import MainLayout from "../src/layouts/MainLayout.jsx"
 import HomePage from "./pages/HomePage";

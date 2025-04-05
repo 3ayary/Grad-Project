@@ -1,4 +1,4 @@
-import "./style/JobContainer.css"
+
 
 export default function JobsContainer({children}) {
     

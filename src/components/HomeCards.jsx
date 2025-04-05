@@ -1,5 +1,5 @@
 import React from 'react'
-import "./style/HomeCards.css"
+
 import { NavLink } from 'react-router-dom'
 const HomeCards = (props) => {
   return (

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect,useState } from 'react';
 import Spinner from './Spinner.jsx';
-import "./style/Card.css"
+
 import aboutUs_data from "../data/OurData.json"
 
 const Card = () => {
