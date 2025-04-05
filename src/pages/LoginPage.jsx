@@ -20,7 +20,7 @@ const LoginPage = () => {
 const navigate = useNavigate();
 
 function handleLogin (){
-  
+  dispatch(login())
   navigate("/")
 }
 
@@ -33,7 +33,7 @@ const logedin = email != ''
       e.preventDefault();
       console.log('Email:', email);
       logedin ?  handleLogin() : alert('access denied!')
-      dispatch(login())
+     
     };
   
     return (<div className='login-container-page'>
