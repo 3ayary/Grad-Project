@@ -1,11 +1,15 @@
 /* Overall page styling */
+.detail-page {
+  min-height: 72vh;
+}
+
 .item-details-container {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 30px;
-  min-height: 100vh;
   background-color: #f4f4f4;
+  min-height: 100%;
 }
 
 /* Container for the image */
@@ -32,7 +36,7 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   height: auto;
-  min-height: 300px;  /* Minimum height for better spacing */
+  min-height: 300px; /* Minimum height for better spacing */
 }
 
 /* Styling the title */
@@ -63,7 +67,6 @@
 
 /* Button or Call to Action (if needed) */
 .item-info button {
-  background-color: #0066cc;
   color: white;
   padding: 10px 20px;
   font-size: 1.2rem;
@@ -71,10 +74,6 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-}
-
-.item-info button:hover {
-  background-color: #0057b8;
 }
 
 /* Small adjustments for responsiveness */
@@ -93,4 +92,53 @@
   .item-info {
     width: 100%;
   }
+
+  .item-details-container2 {
+    padding: 20px; /* Adjust padding for smaller screens */
+  }
+
+  .input-info {
+    width: 95%; /* Adjust width for smaller screens */
+  }
+
+  .item-details-form input {
+    width: 95%; /* Adjust input width for smaller screens */
+    margin: 2% 0; /* Adjust input margin for smaller screens */
+  }
+}
+
+.item-details-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-details-form input {
+  width: 90%;
+  height: 25px;
+  padding: 1%;
+  margin: 1%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.item-details-container2 {
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  justify-content: center;
+  background-color: #f4f4f4;
+}
+
+.input-info {
+  width: 80%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: auto;
+}
+
+.item-details-form-inputs {
+  display: flex;
+  flex-direction: column;
 }
