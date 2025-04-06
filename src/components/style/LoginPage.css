@@ -1,68 +1,100 @@
-/* Center the login form */
+/* Center the login form container */
 .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-margin-top: auto;
-margin-bottom: auto;
-    height: 500vh;
-    background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Use min-height to cover viewport */
+  background-color: #f0f2f5;
+  padding: 20px; /* Add some padding for smaller screens */
+  box-sizing: border-box;
+}
 
-  
-  }
-  .login-container-page{
-height: 450px;
-  }
-  
+.login-container-page {
+  min-height: 450px;
+  display: flex;
+  justify-content: center;  
+  align-items: center;
+}
+/* Card styling (Unified for .login-card) */
+.login-card {
+  background-color: #fff;
+  padding: 2.5rem; /* Slightly reduced base padding */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
-  .pop-card {
-    
-    background-color: #fff;
-    padding: 3rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-   padding-top: 50px;
-    width: 400px;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    gap: 1rem;
-    display: grid;
-    place-items: center;
-margin-top: 3%;
-  }
+  /* Responsive Width */
+  width: 90%;       /* Take 90% of container width */
+  max-width: 400px;  /* Up to a maximum of 400px */
 
-  /* Card styling */
+  /* Layout using Grid to center items */
+  display: grid;
+  place-items: center; /* Center grid items (inputs, button etc.) */
+  gap: 1rem;         /* Space between form elements */
+
+  /* Removed margin: auto and margin-top - rely on parent flex centering */
+  box-sizing: border-box;
+}
+
+/* Input styling (Unified) */
+.login-card input { /* Also applies if you use .pop-card */
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+
+  /* Responsive Width */
+  width: 100%;      /* Take full width of grid cell */
+  box-sizing: border-box; /* Include padding/border in width */
+}
+
+/* --- Media Query for Smaller Screens --- */
+@media (max-width: 480px) {
   .login-card {
-    
-    background-color: #fff;
-    padding: 3rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-   
-    width: 400px;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    gap: 1rem;
-    display: grid;
-    place-items: center;
-margin-top: 10%;
-  }
-  
-  /* Input styling */
-  .login-card input {
-    padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-    width: 300px;
+      padding: 1.5rem; /* Reduce padding further */
+      gap: 0.8rem;     /* Reduce gap slightly */
   }
 
-  .pop-card input {
-    padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-    width: 300px;
+  .login-card input {
+      padding: 0.7rem; /* Slightly smaller padding */
+      font-size: 0.95rem; /* Slightly smaller font */
   }
+}
+
+/* --- If .pop-card is distinct, apply similar responsive principles --- */
+/* Example for .pop-card if it needs different base styles */
+.pop-card {
+  background-color: #fff;
+  padding: 2rem; /* Different base padding */
+  padding-top: 50px; /* Keep specific top padding */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 400px;
+  display: grid; /* Or flex if preferred for this card */
+  place-items: center;
+  gap: 1rem;
+  box-sizing: border-box;
+  /* Removed margins */
+}
+
+.pop-card input {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Apply media query adjustments to .pop-card as well if needed */
+@media (max-width: 480px) {
+   .pop-card {
+       padding: 1.5rem;
+       padding-top: 30px; /* Adjust specific padding too */
+       gap: 0.8rem;
+   }
+  .pop-card input {
+       padding: 0.7rem;
+       font-size: 0.95rem;
+   }
+}
