@@ -1,40 +1,104 @@
+.item {
+    display: flex;
+    /* Default direction is row, override for smaller screens */
+    /* Consider align-items: center; if needed for row layout */
 
-.item{
-    display:flex;
-    height: 250px;
-        width: 70%;
-    background-color: #8fa6c7;
-    color: rgb(0, 0, 0);
-    border-radius: 10px;
-    padding-left: 1%;
-    padding-top: 1%;
-    padding-bottom: 12px;
+    /* Responsive Height */
+    min-height: 200px; /* Minimum height */
+    height: auto;     /* Allow growing based on content */
+
+    /* Responsive Width & Centering */
+    width: 70%;       /* Initial width */
+    max-width: 800px;  /* Optional: Max width on very large screens */
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 15px;
-margin-left: auto;
-margin-right: auto;
+
+    background-color: #8fa6c7;
+    color: rgb(0, 0, 0); /* Ensure text is readable */
+    border-radius: 10px;
+
+    /* Consistent Padding */
+    padding: 20px;    /* Use consistent padding */
+    box-sizing: border-box; /* Include padding in width/height */
+
     box-shadow: 0 2px 4px #00000033;
+}
 
-    
+.item h2 {
+    font-size: 24px;
+    /* Removed specific margins, let flexbox/padding handle spacing */
+    margin: 0 0 5px 0; /* Bottom margin for spacing */
+    color: #282c34; /* Darker color for better contrast */
+    flex-shrink: 0; /* Prevent shrinking if in flex row */
+}
 
+.item p {
+    font-size: 16px;
+    /* Removed specific margins */
+    margin: 0 0 15px 0; /* Bottom margin for spacing */
+    line-height: 1.5; /* Improve readability */
+    flex-grow: 1; /* Allow paragraph to take space if needed */
+    min-width: 0; /* Prevent overflow in flex */
+}
+
+.item button {
+    background-color: #282c34;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    border: none; /* Fixed border property */
+    border-radius: 10px;
+    /* Removed specific margin-left, handle in flex context or media query */
+    margin-top: auto; /* Push button to bottom in vertical layout */
+    align-self: flex-start; /* Align button left by default */
+    white-space: nowrap; /* Prevent button text wrapping */
+}
+
+.item button:hover {
+    background-color: #343f94; /* Add hover effect */
+}
+
+
+/* --- Media Query for Tablets and Smaller Laptops --- */
+@media (max-width: 992px) {
+    .item {
+        width: 85%; /* Increase width slightly */
     }
-    .item h2{
-        font-size: 24px;
-        margin-left: 10px;
-    margin-top: 10px;
-    margin-bottom: 2px;
+}
+
+
+/* --- Media Query for Mobile Phones --- */
+@media (max-width: 600px) {
+    .item {
+        /* Stack elements vertically */
+        flex-direction: column;
+        align-items: center; /* Center items horizontally */
+        text-align: center;  /* Center text content */
+
+        width: 90%;       /* Use more screen width */
+        padding: 15px;    /* Adjust padding */
+        min-height: auto; /* Let content fully dictate height */
     }
-    .item p{
-        font-size: 16px;
-        margin-left: 10px;
+
+    .item h2 {
+        font-size: 20px; /* Slightly smaller heading */
+        margin-bottom: 8px; /* Adjust spacing */
     }
-    .item button{
-        background-color: #282c34;
-        color: white;
-        padding: 10px 20px;
-        text-align: center;
-        font-size: 16px;
-        margin-left: 13px;
-        cursor: pointer;
-        border: 1px ;
-        border-radius: 10px;
+
+    .item p {
+        font-size: 15px; /* Slightly smaller text */
+        margin-bottom: 20px; /* More space before button */
     }
+
+    .item button {
+        /* Center the button */
+        align-self: center; /* Ensure centering in flex column */
+        margin-top: 0; /* Reset margin-top if needed */
+        width: auto; /* Allow button to size naturally or set a width like 80% */
+        /* Example: width: 80%; */
+        padding: 12px 25px; /* Slightly larger tap target */
+    }
+}

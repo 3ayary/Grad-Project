@@ -1,23 +1,81 @@
-.NotFound{
+.NotFound {
     display: grid;
-    place-items: center;
-margin-top: 10%;
+    place-items: center; /* Center content (text, image, button) */
+    text-align: center; /* Ensure text within is centered */
 
+    /* Make container take up significant viewport height */
+    width: 100%;
+    /* Adjust vh value based on header/footer height, or use a fixed value */
+    min-height: 70vh; /* Example: 70% of viewport height */
+    padding: 20px; /* Add padding for content spacing */
+    box-sizing: border-box; /* Include padding in size calculation */
+
+    /* Removed margin-top: 10%; rely on min-height and place-items */
 }
 
+/* Remember to style the actual "Not Found" text/image elements responsively */
+.NotFound h1 { /* Example */
+    font-size: 2.5em; /* Base size */
+    margin-bottom: 15px;
+    color: #333;
+}
 
-.NotFound button{
+.NotFound p { /* Example */
+    font-size: 1.1em;
+    margin-bottom: 25px;
+    color: #555;
+    max-width: 500px; /* Limit line length */
+}
+
+.NotFound img { /* Example */
+    max-width: 100%; /* Ensure image scales down */
+    height: auto;
+    margin-bottom: 20px;
+}
+/* --- End of example content styles --- */
+
+
+.NotFound button {
     background-color: #343f94;
     color: white;
-    padding: 10px 20px;
+    padding: 12px 25px; /* Slightly larger padding */
     border-radius: 5px;
     cursor: pointer;
     border: none;
-
+    font-size: 1rem; /* Explicit font size */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
 }
-.NotFound button:hover{
 
+.NotFound button:hover {
     background-color: #282c34;
-    color: white;
+    color: white; /* Keep color or change if needed */
+}
 
+/* --- Media Queries for Adjustments --- */
+@media (max-width: 768px) {
+    .NotFound h1 { /* Example */
+        font-size: 2em;
+    }
+    .NotFound p { /* Example */
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .NotFound {
+         min-height: 60vh; /* Slightly reduce height if needed */
+         padding: 15px;
+    }
+
+     .NotFound h1 { /* Example */
+        font-size: 1.7em;
+     }
+    .NotFound p { /* Example */
+        font-size: 0.95em;
+     }
+
+    .NotFound button {
+        padding: 10px 20px; /* Slightly smaller padding */
+        font-size: 0.95rem;
+    }
 }

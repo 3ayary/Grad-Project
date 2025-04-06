@@ -1,17 +1,51 @@
 .jobs-container {
+  margin-bottom: 20px;
+  width: 100%; /* Keep full width */
+  /* Removed height: 100%; let content determine height */
+  padding-bottom: 20px; /* Keep bottom padding */
+  box-sizing: border-box; /* Recommended for width: 100% */
+}
 
-    margin-bottom: 20px;
-   
-    width: 100%;
-    height: 100%;
-    padding-bottom: 20px;
-  
+.jobs-container h1 {
+  /* Centered text */
+  text-align: center;
+
+  /* Consistent vertical padding using fixed units */
+  padding-top: 30px;  /* Example value */
+  padding-bottom: 15px; /* Example value */
+
+  /* Simplified margins */
+  /* margin-top: 0; /* Remove small top margin */
+  margin-bottom: 20px; /* Add reasonable space below heading */
+  margin-left: auto; /* Ensure centering even if text-align was removed */
+  margin-right: auto; /* Ensure centering */
+
+  /* Optional: Constrain line length on very wide screens */
+  max-width: 800px;
+
+  /* Example base font size (adjust as needed) */
+  font-size: 2.2em;
+  line-height: 1.3; /* Improve line spacing */
+  color: #333; /* Example color */
+}
+
+
+/* --- Media Query for Tablets and Smaller Devices --- */
+@media (max-width: 768px) {
+  .jobs-container h1 {
+      font-size: 1.8em; /* Reduce font size */
+      padding-top: 25px; /* Slightly reduce padding */
+      padding-bottom: 15px;
+      margin-bottom: 15px; /* Slightly reduce margin */
   }
-  .jobs-container h1{
-      margin-left: 10px;
-margin-top: 1px;
-      margin-bottom: 2px;
-    padding-top: 3%;
-    padding-bottom: 2%;
-      text-align: center;
+}
+
+/* --- Media Query for Mobile Phones --- */
+@media (max-width: 480px) {
+  .jobs-container h1 {
+      font-size: 1.5em; /* Further reduce font size */
+      padding-top: 20px; /* Further reduce padding */
+      padding-bottom: 10px;
+      margin-bottom: 10px; /* Further reduce margin */
   }
+}

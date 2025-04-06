@@ -1,40 +1,105 @@
-
-.main-dev{
+.main-dev {
     display: flex;
     width: 100%;
-    height: 100%;
-justify-content: center;
-gap: 30px;
-flex-wrap: wrap;
+    /* Consider removing height: 100% unless the parent has a specific height */
+    /* height: 100%; */
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 20px; /* Added padding for spacing around cards */
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 
+.aboutUs-Card {
+    background-color: #8fa6c7;
+    display: flex;
+    align-items: center; /* Vertically center items */
+    margin-bottom: 20px; /* Use fixed unit or keep percentage */
+    border-radius: 8px;
 
+    /* Responsive Width: Start with max-width, allow shrinking */
+    width: 500px; /* Maximum desired width */
+    max-width: 100%; /* Prevent overflow on small containers */
 
-.aboutUs-Card{
-background-color: #8fa6c7;
-display: flex;
-margin-bottom: 2%;
-border-radius: 8px;
-width: 500px;
-height: 150px;
-margin-left: 8px;
-padding-left: 8px;
+    /* Responsive Height: Use min-height */
+    min-height: 150px; /* Minimum height, allows growing */
+    height: auto; /* Let content determine height */
 
-
+    /* margin-left: 8px; Removed - rely on gap and container padding */
+    padding: 15px; /* Use padding inside the card */
+    box-sizing: border-box; /* Include padding in width/height */
+    overflow: hidden; /* Prevent content spillover */
 }
+
 .aboutUs-Card img {
-    width: 100px;
-    margin: 5px;
-    margin-right: 10px;
- 
+    width: 100px; /* Fixed width */
+    height: 100px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensure image covers the area well */
+    border-radius: 50%; /* Make images circular for aesthetics */
+    margin-right: 15px; /* Space between image and text */
+    flex-shrink: 0; /* Prevent image from shrinking */
 }
 
-.aboutUs-info{
-    margin-right: 5px;
+.aboutUs-info {
+    /* margin-right: 5px; Removed - padding on parent handles spacing */
     color: white;
+    flex-grow: 1; /* Allow info to take remaining space */
+    min-width: 0; /* Helps prevent text overflow issues in flex */
 }
 
-.title{
-text-align: center;
-  
+.aboutUs-info h3, /* Assuming you have titles/names */
+.aboutUs-info p {
+    margin: 5px 0; /* Add some vertical spacing to text */
+}
+
+
+.title {
+    text-align: center;
+    width: 100%; /* Ensure title takes full width if needed */
+    margin-bottom: 30px; /* Space below the main title */
+    font-size: 1.8em; /* Example size */
+    color: #282c34; /* Example color */
+}
+
+/* --- Media Query for Smaller Screens (e.g., Tablets/Large Phones) --- */
+@media (max-width: 768px) {
+    .main-dev {
+        gap: 20px; /* Reduce gap */
+        padding: 15px; /* Reduce padding */
+    }
+
+    .aboutUs-Card {
+        /* Keep width up to 500px, but allow wrapping */
+         /* Adjust min-height if needed */
+    }
+}
+
+
+/* --- Media Query for Very Small Screens (e.g., Mobile Phones) --- */
+@media (max-width: 550px) {
+    .main-dev {
+        gap: 15px; /* Further reduce gap */
+        padding: 10px; /* Further reduce padding */
+    }
+
+    .aboutUs-Card {
+        /* Stack image and text vertically */
+        flex-direction: column;
+        text-align: center; /* Center text below image */
+        /* Width becomes almost full screen */
+        width: 95%; /* Take most of the screen width */
+        padding: 20px; /* Adjust padding for vertical layout */
+         min-height: auto; /* Reset min-height, let content dictate */
+    }
+
+    .aboutUs-Card img {
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 15px; /* Add space below image */
+        width: 80px; /* Optionally slightly smaller image */
+        height: 80px;
+    }
+
+    .aboutUs-info {
+       /* Text is already centered by parent's text-align */
+    }
 }

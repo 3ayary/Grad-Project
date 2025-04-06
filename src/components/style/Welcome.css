@@ -1,20 +1,61 @@
-.Welcome-card{
-    background-color: #343f94;;
+.Welcome-card {
+    background-color: #343f94;
     color: #fffefe;
-    padding: 10px;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    margin: auto;
+
+    /* Consistent padding */
+    padding: 30px 15px; /* Example: 30px top/bottom, 15px left/right */
+
+    /* Assuming full-width or near full-width */
+    width: 100%;
+    box-sizing: border-box; /* Important with width: 100% and padding */
+
     margin-bottom: 20px;
-    height: 100%;
-    font-display: bold;
+    /* Removed margin: auto; */
+
+    height: auto; /* Let content determine height */
+    /* Removed height: 100%; */
+
+    font-weight: bold; /* Corrected property */
+    /* Removed font-display: bold; */
+
     text-align: center;
 }
-.Welcome-card h1{
-    font-size: 50px;
+
+.Welcome-card h1 {
+    /* Responsive font size using clamp(MIN, PREFERRED, MAX) */
+    /* Adjust values as needed: clamp(min-size, scaling-factor, max-size) */
+    /* 50px ~ 3.125rem */
+    font-size: clamp(2rem, 5vw + 1rem, 3.125rem);
+
     font-weight: bolder;
-   
+    margin: 0 0 10px 0; /* Adjust margins for spacing */
+    line-height: 1.2; /* Adjust line height for large fonts */
 }
-.Welcome-card h3{
-    font-size: 20px;
-    font-weight: bold;}
+
+.Welcome-card h3 {
+    /* Responsive font size using clamp() */
+    /* 20px ~ 1.25rem */
+    font-size: clamp(1rem, 1.5vw + 0.5rem, 1.25rem);
+
+    font-weight: bold;
+    margin: 0; /* Reset margin */
+    line-height: 1.4;
+}
+
+/* --- Media Queries for potential fine-tuning --- */
+@media (max-width: 768px) {
+    .Welcome-card {
+        padding: 25px 15px; /* Slightly reduce vertical padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .Welcome-card {
+        padding: 20px 10px; /* Further reduce padding */
+    }
+    /* Clamp function should handle font sizes well, but you could override here if needed */
+    /* Example:
+    .Welcome-card h1 { font-size: 1.8rem; }
+    .Welcome-card h3 { font-size: 0.95rem; }
+    */
+}

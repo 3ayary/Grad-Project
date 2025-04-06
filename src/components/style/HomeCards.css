@@ -1,39 +1,113 @@
-
-.home{
+.home {
+    /* Assuming part of a multi-column layout initially */
     width: 30%;
-    height: 100%;
+    /* Add min-width to prevent becoming too narrow if parent shrinks significantly */
+    min-width: 250px;
+
+    /* Responsive Height */
+    height: auto; /* Let content determine height */
+    min-height: 180px; /* Optional: Ensure a minimum height */
+
     background-color: #6389bd;
-    color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0); /* Ensure readable text */
     border-radius: 10px;
-    padding-left: 1%;
-    padding-top: 1px;
-    padding-bottom: 12px;
+
+    /* Consistent Padding */
+    padding: 15px;
+    box-sizing: border-box; /* Include padding in width/height */
+
     margin-top: 15px;
+    /* Centering will be added in media query for smaller screens */
+    margin-left: 0; /* Default alignment (depends on parent) */
+    margin-right: 0;/* Default alignment */
 
-    
     box-shadow: 0 2px 4px #00000033;
- 
-    
+}
 
+.home h2 {
+    font-size: 22px; /* Slightly smaller */
+    margin-left: 0;  /* Remove specific margin, rely on padding */
+    margin-right: 0; /* Remove specific margin */
+    margin-top: 0;   /* Remove default margin */
+    margin-bottom: 8px;
+    color: #1a3a6b; /* Darker blue for contrast */
+}
+
+.home p {
+    font-size: 16px;
+    margin-left: 0; /* Remove specific margin */
+    margin-right: 0;/* Remove specific margin */
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.home button {
+    background-color: #282c34;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;
+    margin-left: 0; /* Remove specific margin */
+    margin-top: 10px; /* Add space above button */
+    cursor: pointer;
+    border: none; /* Fixed border */
+    border-radius: 10px;
+    display: inline-block; /* Ensure margins work correctly */
+    transition: background-color 0.3s ease;
+}
+
+.home button:hover {
+     background-color: #343f94; /* Consistent hover effect */
+}
+
+
+/* --- Media Query for Tablets --- */
+/* Adjust based on when the column layout should change */
+@media (max-width: 992px) {
+    .home {
+         /* Example: If switching to 2 columns */
+        width: 45%;
+        min-width: 280px; /* Adjust min-width if needed */
     }
-    .home h2{
-        font-size: 24px;
-        margin-left: 10px;
-    margin-top: 10px;
-    margin-bottom: 2px;
-    }
-    .home p{
-        font-size: 16px;
-        margin-left: 10px;
-    }
-    .home button{
-        background-color: #282c34;
-        color: white;
-        padding: 10px 20px;
+}
+
+
+/* --- Media Query for Mobile Phones --- */
+@media (max-width: 768px) {
+    .home {
+        /* Take up most of the width and center */
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        min-width: 0; /* Reset min-width */
+        padding: 20px; /* Maybe more padding */
+
+        /* Optional: Center content inside */
         text-align: center;
-        font-size: 16px;
-        margin-left: 13px;
-        cursor: pointer;
-        border: 1px ;
-        border-radius: 10px;
     }
+
+    .home h2 {
+        font-size: 20px;
+    }
+
+    .home p {
+        font-size: 15px;
+    }
+
+    .home button {
+         /* Center the button */
+         display: block; /* Make it block to center with auto margins */
+         margin-left: auto;
+         margin-right: auto;
+         width: fit-content; /* Or set a specific width like 60% */
+         /* Example: width: 60%; */
+    }
+}
+
+/* Optional: Further adjustments for very small screens */
+@media (max-width: 480px) {
+    .home {
+        width: 95%; /* Even more width */
+        padding: 15px;
+    }
+}
