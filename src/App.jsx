@@ -23,8 +23,7 @@ import ItemsPage from "./pages/ItemsPage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import AboutUsPage from "./pages/AboutUsPage.jsx";
 import ItemDetails from "./pages/itemDetails.jsx";
-
-
+import Dashboard from "./pages/dashborad.jsx";
 export default function App() {
 
 const router = createBrowserRouter(
@@ -36,6 +35,7 @@ const router = createBrowserRouter(
 <Route path="login" element={<LoginPage/>}/>
 <Route path="aboutUs" element={<AboutUsPage />}/>
 <Route path="item-details/:id" element={<ItemDetails/>}/>
+<Route path="dashboard" element={<Dashboard/>}/>
 <Route path="*" element={<NotFoundPage/>}/>
 </Route>
   )

@@ -10,6 +10,8 @@ const Card = () => {
 const [Person,setPerson] = useState([])
 const aboutUs_api = aboutUs_data.Us
  const [loading, setLoading] = useState(true);
+
+ 
   useEffect(() => {
     const fetchPerson = async () => {
       

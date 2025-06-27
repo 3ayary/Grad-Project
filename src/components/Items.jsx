@@ -1,16 +1,12 @@
 import  { useState, useEffect } from "react";
 import Spinner from "../components/Spinner.jsx";
 
-import itemsapi from "../data/ItemsData.json"
 import {Link} from 'react-router-dom'
 
 const Items = ({ isHome = false }) => {
 
 
-const api = isHome ? itemsapi.items.slice(0,3): itemsapi.items; 
-
-
-
+  const api = "https://gradserver-y3h5.onrender.com/items?:limit=3"; // API endpoint to fetch items
 
 console.log(api)
   const [Items, setItems] = useState([]);
@@ -19,23 +15,21 @@ console.log(api)
 
 
 
+useEffect(() => {
+  const fetchItems = async () => {
+    try {
+      const res = await fetch("https://gradserver-y3h5.onrender.com/items");
+      const data = await res.json();
+      setItems(isHome ? data.slice(0, 3) : data);
+    } catch (error) {
+      console.error("error fetching data", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-  useEffect(() => {
-    const fetchItems = async () => {
-      
-      try {
-
-        setItems(api);
-
-      } catch (error) {
-        console.log("error fetching data", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchItems();
-  }, []);
+  fetchItems();
+}, []);
 
   return (
     <div>

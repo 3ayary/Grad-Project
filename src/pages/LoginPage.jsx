@@ -10,8 +10,8 @@ const LoginPage = () => {
   const dispatch = useDispatch()
 
   const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-  
+
+
 
 
 
@@ -21,14 +21,21 @@ const navigate = useNavigate();
 
 function handleLogin (){
   dispatch(login())
-  navigate("/")
+if(email == 'admin@admin.com'){
+  navigate('/dashboard');
+  alert('Welcome Admin!');
+}
+else {
+  navigate('/');
+  alert('Welcome User!');
+}
+
 }
 
 
 
-
-
 const logedin = email != '' 
+
     const handleSubmit = (e) => {
       e.preventDefault();
       console.log('Email:', email);

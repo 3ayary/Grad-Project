@@ -1,12 +1,11 @@
 import "../components/style/itemDetails.css";
 import { useParams } from "react-router-dom";
-import itemsapi from "../data/ItemsData.json"; // Import the JSON data
 import { useState, useEffect } from "react";
 import Spinner from "../components/Spinner.jsx"; // Import Spinner component for loading
 
 const ItemDetails = () => {
   const { id } = useParams(); // Get the item ID from URL params
-  const api = itemsapi.items; // Access the items array from JSON
+  const api = 'https://gradserver-y3h5.onrender.com/items' // Access the items array from JSON
 
   const [item, setItem] = useState(null); // State to store the selected item
   const [loading, setLoading] = useState(true); // Loading state for spinner
@@ -19,20 +18,22 @@ const ItemDetails = () => {
     };
   
   useEffect(() => {
-    const fetchItemDetails = async () => {
-      try {
-        // Find the item in the array where the ID matches the URL param ID
-        const selectedItem = api.find((item) => item.id === id);
-        setItem(selectedItem); // Set the selected item in the state
-      } catch (error) {
-        console.error("Error fetching item details:", error);
-      } finally {
-        setLoading(false); // Stop loading once data is fetched
-      }
-    };
+  const fetchItemDetails = async () => {
+    try {
+      const res = await fetch(api);
+      const data = await res.json();
 
-    fetchItemDetails();
-  }, [id, api]); // Run effect when `id` or `api` changes
+      const selectedItem = data.find((item) => item.id === id);
+      setItem(selectedItem);
+    } catch (error) {
+      console.error("Error fetching item details:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  fetchItemDetails();
+}, [id]);
 
   if (loading) {
     return <Spinner />; // Show loading spinner while data is being fetched
