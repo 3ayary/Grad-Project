@@ -10,7 +10,7 @@ const LoginPage = () => {
   const dispatch = useDispatch()
 
   const [email, setEmail] = useState('');
-
+const [password, setPassword] = useState('');
 
 
 
@@ -20,14 +20,20 @@ const LoginPage = () => {
 const navigate = useNavigate();
 
 function handleLogin (){
-  dispatch(login())
-if(email == 'admin@admin.com'){
+ 
+if(email == 'admin@admin.com'&& password == 'admin'){
   navigate('/dashboard');
   alert('Welcome Admin!');
+   dispatch(login())
 }
-else {
+else if(email == 'user@user.com'&& password == 'user'){
   navigate('/');
   alert('Welcome User!');
+   dispatch(login())
+}else{
+  alert('Invalid credentials, please try again.');
+  setEmail('');
+  setPassword('');
 }
 
 }
@@ -42,6 +48,8 @@ const logedin = email != ''
       logedin ?  handleLogin() : alert('access denied!')
      
     };
+
+    
   
     return (<div className='login-container-page'>
       <form onSubmit={handleSubmit} className='login-card'>
@@ -53,6 +61,12 @@ const logedin = email != ''
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+          />
+            <input
+            type="password"
+            placeholder="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
   
