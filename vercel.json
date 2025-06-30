@@ -1,22 +1,24 @@
 {
-    "routes": [
+  "rewrites": [
     {
- "src":"/",
- "dest":"/" 
-},
-{
-    "src":"/items",
-    "dest":"/"
-},    {
-    "src":"/login",
-    "dest":"/" 
-   },    {
-    "src":"/aboutUs",
-    "dest":"/" 
-   },    {
-    "src":"/item-details/:id",
-    "dest":"/" 
-   }
-
-    ]
-  }
+      "source": "/",
+      "destination": "/"
+    },
+    {
+      "source": "/items",
+      "destination": "/"
+    },
+    {
+      "source": "/login",
+      "destination": "/"
+    },
+    {
+      "source": "/aboutUs",
+      "destination": "/"
+    },
+    {
+      "source": "/item-details/:id",
+      "destination": "/"
+    }
+  ]
+}
