@@ -11,12 +11,15 @@ initialState,
 reducers:{
 login : (state) => {
    state.thestate = true;
-}
+},
+logout : (state) => {
+   state.thestate = false;
 }
 
+}
 }
 )
 
-export const {login} = userSlice.actions;
+export const {login,logout} = userSlice.actions;
 
 export default userSlice.reducer;

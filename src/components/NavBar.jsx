@@ -1,10 +1,11 @@
 import { NavLink } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { logout } from '../features/UserSlice'
 
 
 const NavBar = () => {
 const userState = useSelector((state)=>state.user.thestate)
-
+const dispatch = useDispatch()
   console.log(`navbar ${userState}`)
 
 
@@ -16,7 +17,7 @@ const userState = useSelector((state)=>state.user.thestate)
     <nav className="navbar">
     <NavLink className={({isActive})=>isActive ? 'nav-linksActive':''} to="/"> <button>Home</button></NavLink>
          <NavLink className={({isActive})=>isActive ? 'nav-linksActive':''} to="/items"> <button>Items</button></NavLink>
-         <NavLink className={({isActive})=>isActive ? 'nav-linksActive':''} to={ userState == false ? "/Login" : "/aboutus"}> <button>{ userState == false ? "Login" : "about us" }</button></NavLink>
+         <NavLink  to={ userState == false ? "/Login" : "/"} onClick={userState && dispatch(logout)}> <button>{ userState == false ? "Login" : "Logout" }</button></NavLink>
           
     </nav>
   </header>
